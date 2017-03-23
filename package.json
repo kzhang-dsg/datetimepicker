@@ -1,6 +1,6 @@
 {
   "name": "tz-datetimepicker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jQuery Plugin DateTimePicker it is DatePicker and TimePicker in one",
   "main": "build/jquery.datetimepicker.full.min.js",
   "scripts": {
