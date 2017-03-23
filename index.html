@@ -73,7 +73,7 @@
 		<option value="fr">French</option>
 		<option value="es">Spanish</option>
 	</select>
-	<input type="text" value="D, l, M, F, Y-m-d H:i:s" id="datetimepicker_format_value"/>
+	<input type="text" value="ddd, dddd, MMM, MMMM, YYYY-MM-DD HH:mm:ss" id="datetimepicker_format_value"/>
 	<input type="button" value="applay =>" id="datetimepicker_format_change"/>
 	<input type="text" id="datetimepicker_format" class="input input-wide"/>
 </body>
@@ -107,8 +107,8 @@ $('#datetimepicker').datetimepicker({value:'2015/04/15 05:03',step:10});
 $('.some_class').datetimepicker();
 
 $('#default_datetimepicker').datetimepicker({
-	formatTime:'H:i',
-	formatDate:'d.m.Y',
+	formatTime:'HH:mm',
+	formatDate:'DD.MM.YYYY',
 	//defaultDate:'8.12.1986', // it's my birthday
 	defaultDate:'+03.01.1970', // it's my birthday
 	defaultTime:'10:00',
@@ -120,20 +120,20 @@ $('#datetimepicker10').datetimepicker({
 	inline:true
 });
 $('#datetimepicker_mask').datetimepicker({
-	mask:'9999/19/39 29:59'
+	mask:'19/39/9999 29:59'
 });
 
 $('#datetimepicker1').datetimepicker({
 	datepicker:false,
-	format:'H:i',
+	format:'HH:mm',
 	step:5
 });
 $('#datetimepicker2').datetimepicker({
 	yearOffset:222,
 	lang:'ch',
 	timepicker:false,
-	format:'d/m/Y',
-	formatDate:'Y/m/d',
+	format:'DD/MM/YYYY',
+	formatDate:'YYYY/MM/DD',
 	minDate:'-1970/01/02', // yesterday is minimum date
 	maxDate:'+1970/01/02' // and tommorow is maximum date calendar
 });
@@ -166,7 +166,7 @@ $('#destroy').click(function(){
 	}
 });
 var logic = function( currentDateTime ){
-	if (currentDateTime && currentDateTime.getDay() == 6){
+	if (currentDateTime && currentDateTime.day() == 6){
 		this.setOptions({
 			minTime:'11:00'
 		});
@@ -196,11 +196,11 @@ $('#datetimepicker9').datetimepicker({
 	weekends:['01.01.2014','02.01.2014','03.01.2014','04.01.2014','05.01.2014','06.01.2014'],
 	timepicker:false
 });
-var dateToDisable = new Date();
-	dateToDisable.setDate(dateToDisable.getDate() + 2);
+var dateToDisable = moment();
+	dateToDisable.date(dateToDisable.date() + 2);
 $('#datetimepicker11').datetimepicker({
 	beforeShowDay: function(date) {
-		if (date.getMonth() == dateToDisable.getMonth() && date.getDate() == dateToDisable.getDate()) {
+		if (date.month() == dateToDisable.month() && date.date() == dateToDisable.date()) {
 			return [false, ""]
 		}
 
@@ -209,7 +209,7 @@ $('#datetimepicker11').datetimepicker({
 });
 $('#datetimepicker12').datetimepicker({
 	beforeShowDay: function(date) {
-		if (date.getMonth() == dateToDisable.getMonth() && date.getDate() == dateToDisable.getDate()) {
+		if (date.month() == dateToDisable.month() && date.date() == dateToDisable.date()) {
 			return [true, "custom-date-style"];
 		}
 

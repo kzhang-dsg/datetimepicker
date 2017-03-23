@@ -1,3 +1,14 @@
+# Datetime Picker with timezone support
+
+Replaced php-date-formatter with momentJS.
+
+Replaced native Date object with moment object.
+
+Used Moment Timezone to support timezones.
+
+To set a timezone, use the `timezone` option. Please reference to Moment Timezone for supported timezones and format
+
+
 # PLEASE. Help me update documentation.
 [Doc.tpl](https://github.com/xdan/datetimepicker/blob/master/doc.tpl)
 This file will be automatically displayed on the site
