@@ -8,6 +8,7 @@ Used Moment Timezone to support timezones.
 
 To set a timezone, use the `timezone` option. Please reference to Moment Timezone for supported timezones and format
 
+# Below are the origional README from [xdan/datetimepicker](https://github.com/xdan/datetimepicker)
 
 # PLEASE. Help me update documentation.
 [Doc.tpl](https://github.com/xdan/datetimepicker/blob/master/doc.tpl)
