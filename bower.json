@@ -1,6 +1,6 @@
 {
   "name": "tz-datetimepicker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": [
     "build/jquery.datetimepicker.full.min.js",
     "jquery.datetimepicker.css"

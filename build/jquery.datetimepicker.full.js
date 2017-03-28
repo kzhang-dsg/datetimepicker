@@ -16765,7 +16765,7 @@ return hooks;
 
 			input
 				.on('mousewheel.xdsoft', function (event) {
-					if (!options.scrollInput) {
+					if (!options.scrollInput || !_xdsoft_datetime.currentTime) {
 						return true;
 					}
 					if (!options.datepicker && options.timepicker) {
