@@ -578,6 +578,7 @@
 		onShow: function () { },
 		onClose: function () { },
 		onGenerate: function () { },
+		onAfterInit: function() { },
 
 		withoutCopyright: true,
 		inverseButton: false,
@@ -2254,7 +2255,12 @@
 				.on('blur.xdsoft', function () {
 					datetimepicker.trigger('close.xdsoft');
 				});
+
+			if (options.onAfterInit && $.isFunction(options.onAfterInit)) {
+				options.onAfterInit.call(datetimepicker);
+			}
 		};
+
 		destroyDateTimePicker = function (input) {
 			var datetimepicker = input.data('xdsoft_datetimepicker');
 			if (datetimepicker) {
@@ -2345,3 +2351,4 @@
 		this.style = style;
 	}
 }));
+
