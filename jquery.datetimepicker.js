@@ -1581,7 +1581,7 @@
 
 						if (options.minDate !== false) {
 							minDate = _xdsoft_datetime.strToDate(options.minDate);
-							maxDate.startOf("day");
+							minDate.startOf("day");
 						}
 
 						while (i < _xdsoft_datetime.currentTime.date() || start.day() !== options.dayOfWeekStart || _xdsoft_datetime.currentTime.month() === start.month()) {
